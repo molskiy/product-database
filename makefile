@@ -15,5 +15,3 @@ $(TARGET): $(OBJECTS)
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
-
-.PHONY: all clean
