@@ -2,9 +2,9 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
-namespace Shop {
-    Product::Product(): name(""), price(0.0), quantity(0) {}
-    Product::Product(string n, double p, int q): name(n), price(p), quantity(q) {}
+namespace Shop{
+    Product::Product(): name(""), price(0.0), quantity(0){}
+    Product::Product(string n, double p, int q): name(n), price(p), quantity(q){}
     string Product::getName() const {return name;}
     double Product::getPrice() const {return price;}
     int Product::getQuantity() const {return quantity;}
@@ -23,7 +23,7 @@ namespace Shop {
         return is;
     }
 
-    Database::Database(const string& fname): filename(fname), size(0), capacity(2) {
+    Database::Database(const string& fname): filename(fname), size(0), capacity(2){
         products = new Product[capacity];
         loadFromFile();
     }
