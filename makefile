@@ -1,17 +1,12 @@
-CC = g++
-CFLAGS = -Wall -g
+CXX = g++
+CXXFLAGS = -Wall -Wextra -std=c++11
 TARGET = shop
-SOURCES = main.cpp Product.cpp
-OBJECTS = $(SOURCES:.cpp=.o)
-HEADERS = Product.h
-
+SRCS = main.cpp func.cpp
+OBJS = $(SRCS:.cpp=.o)
 all: $(TARGET)
-
-$(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) -o $(TARGET)
-
-%.o: %.cpp $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
-
+$(TARGET): $(OBJS)
+ $(CXX) $(CXXFLAGS) -o $@ $^
+%.o: %.cpp
+ $(CXX) $(CXXFLAGS) -c $< -o $@
 clean:
-	rm -f $(OBJECTS) $(TARGET)
+ rm -f $(OBJS) $(TARGET)
