@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     Shop::Database db("products.txt");
     int choice;
-    do {
+    do{
         Shop::showMenu();
         cin >> choice;
         switch (choice){
