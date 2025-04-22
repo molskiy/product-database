@@ -1,9 +1,10 @@
 #include <string>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
-namespace Shop {
-    class Product {
+namespace Shop{
+    class Product{
     private:
         string name;
         double price;
@@ -27,7 +28,7 @@ namespace Shop {
         friend istream& operator>>(istream& is, Product& p);
     };
 
-    class Database {
+    class Database{
     private:
         Product* products;
         int size;
