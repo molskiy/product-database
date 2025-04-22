@@ -1,15 +1,12 @@
 #include "func.h"
 #include <iostream>
 using namespace std;
-
 int main(){
     Shop::Database db("products.txt");
     int choice;
-
     do {
         Shop::showMenu();
         cin >> choice;
-
         switch (choice){
         case 1:
             db.displayAll();
@@ -56,6 +53,5 @@ int main(){
             cout << "invalid choice" << endl;
         }
     } while (choice != 7);
-
     return 0;
 }
